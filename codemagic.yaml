@@ -5,6 +5,8 @@ workflows:
       vars:
         PYTHON_KIVY_VERSION: 2.1.0
     scripts:
+      - name: Installer setuptools + distutils
+        script: pip install setuptools
       - name: Installer Buildozer
         script: pip install buildozer
       - name: Build APK
