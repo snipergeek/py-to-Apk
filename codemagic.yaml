@@ -1,0 +1,11 @@
+workflows:
+  android-build:
+    name: ReconFacial APK Build
+    environment:
+      vars:
+        PYTHON_KIVY_VERSION: 2.1.0
+    scripts:
+      - name: Installer Buildozer
+        script: pip install buildozer
+      - name: Build APK
+        script: buildozer android debug
