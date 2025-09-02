@@ -11,8 +11,5 @@ workflows:
         script: pip install cython
       - name: Installer Buildozer
         script: pip install buildozer
-      - name: Vérifier Python-for-Android prerequisites
-        script: buildozer android update
       - name: Build APK
         script: buildozer android debug
-
