@@ -4,6 +4,9 @@ workflows:
     environment:
       vars:
         PYTHON_KIVY_VERSION: 2.1.0
+      # Spécifie Python 3.11 pour éviter les problèmes distutils / OpenSSL
+      image: macos-14
+      python: 3.11
     scripts:
       - name: Installer setuptools + distutils
         script: pip install setuptools
@@ -11,7 +14,7 @@ workflows:
         script: pip install cython
       - name: Installer Buildozer
         script: pip install buildozer
-      - name: Accepter les licences Android
-        script: yes | buildozer android update
+      - name: Vérifier Python-for-Android prerequisites
+        script: buildozer android update
       - name: Build APK
         script: buildozer android debug
