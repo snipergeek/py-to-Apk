@@ -11,5 +11,7 @@ workflows:
         script: pip install cython
       - name: Installer Buildozer
         script: pip install buildozer
+      - name: Accepter les licences Android
+        script: yes | buildozer android update
       - name: Build APK
         script: buildozer android debug
